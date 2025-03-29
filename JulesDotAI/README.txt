@@ -1,4 +1,4 @@
-Original code by Gerald Taylor
+Original code design by Gerald Taylor
 Modified by Jackson Netter
 
 3/29/2025:
@@ -8,6 +8,7 @@ Modified by Jackson Netter
 -Implemented find_k_nearest method.
 -Connected project to github.
 -Restructured README File to put most recent updates at the top.
+-Implemented predict method.
 
 3/15/2025:
 -Created Readme File.

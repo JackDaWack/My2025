@@ -62,7 +62,29 @@ void knn::find_k_nearest(data* q_point)
         }
     }
 }
-int knn::predict();
+int knn::predict()
+{
+    std::map<uint8_t, int> class_freq;
+    for (int i = 0; i < neighbors->size(); i++)
+    {
+        if (class_freq.find(neighbors->at(i)->get_label()) == class_freq.end())
+        {class_freq[neighbors->at(i)->get_label()] = 1;}
+        else
+        {class_freq[neighbors->at(i)->get_label()]++;}
+    }
+    int best = 0;
+    int max = 0;
+    for (auto kv : class_freq)
+    {
+        if (kv.second > max)
+        {
+            max = kv.second;
+            best = kv.first;
+        }
+    }
+    delete neighbors;
+    return best;
+}
 
 //Calculates the distance between data points.
 double knn::calc_distance(data* q_point, data* input)
