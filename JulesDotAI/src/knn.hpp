@@ -14,7 +14,6 @@ class knn
 
     public:
     knn(int val);
-    knn();
     ~knn();
 
     void find_k_nearest(data* q_point);
