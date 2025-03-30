@@ -5,6 +5,7 @@ Modified by Jackson Netter
 -Implemented validate_performance() and test_performance methods.
 -Removed problemed semicolons from the setter methods in knn.cc.
 -Attempted to resolve issues with constructors in knn class.
+-Added kmeans files for later implementation.
 
 3/29/2025:
 -Implemented setters in knn.cc
