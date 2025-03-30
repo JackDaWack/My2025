@@ -105,8 +105,42 @@ double knn::calc_distance(data* q_point, data* input)
 #endif
     return distance;
 }
-double knn::test_performance();
-double knn::validate_performance();
+double knn::test_performance()
+{
+    double current_performance = 0.0;
+    int count = 0;
+    int data_indx = 0;
+    for (data *q_point : *test_data)
+    {
+        find_k_nearest(q_point);
+        int prediction = predict();
+        if (prediction == q_point->get_label())
+        {count++;}
+        data_indx++;
+        printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)data_indx)));
+    }
+    current_performance =((double)count*100.0)/((double)test_data->size());
+    printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)test_data->size())));
+    return current_performance;
+}
+double knn::validate_performance() 
+{
+    double current_performance = 0.0;
+    int count = 0;
+    int data_indx = 0;
+    for (data *q_point : *validation_data)
+    {
+        find_k_nearest(q_point);
+        int prediction = predict();
+        if (prediction == q_point->get_label())
+        {count++;}
+        data_indx++;
+        printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)data_indx)));
+    }
+    current_performance =((double)count*100.0)/((double)validation_data->size());
+    printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)validation_data->size())));
+    return current_performance;
+}
 //setters:
 void knn::set_training(std::vector<data *> * vect);{training_data = vect;}
 void knn::set_test(std::vector<data *> * vect);{test_data = vect;}

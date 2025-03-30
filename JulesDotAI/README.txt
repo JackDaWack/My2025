@@ -1,6 +1,9 @@
 Original code design by Gerald Taylor
 Modified by Jackson Netter
 
+3/30/2025:
+-Implemented validate_performance() and test_performance methods.
+
 3/29/2025:
 -Implemented setters in knn.cc
 -Implemented euclid distance calculation method.
