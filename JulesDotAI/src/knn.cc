@@ -120,7 +120,7 @@ double knn::test_performance()
         printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)data_indx)));
     }
     current_performance =((double)count*100.0)/((double)test_data->size());
-    printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)test_data->size())));
+    printf("Test Performance: %3f %%/n",(((double)count*100.0)/((double)test_data->size())));
     return current_performance;
 }
 double knn::validate_performance() 
@@ -138,11 +138,11 @@ double knn::validate_performance()
         printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)data_indx)));
     }
     current_performance =((double)count*100.0)/((double)validation_data->size());
-    printf("Current Performance: %3f %%/n",(((double)count*100.0)/((double)validation_data->size())));
+    printf("Validation Performance: %3f %%/n",(((double)count*100.0)/((double)validation_data->size())));
     return current_performance;
 }
 //setters:
-void knn::set_training(std::vector<data *> * vect);{training_data = vect;}
-void knn::set_test(std::vector<data *> * vect);{test_data = vect;}
+void knn::set_training(std::vector<data *> * vect){training_data = vect;}
+void knn::set_test(std::vector<data *> * vect){test_data = vect;}
 void knn::set_validation(std::vector<data *> * vect){validation_data = vect;}
 void knn::set_k(int val){k = val;}
