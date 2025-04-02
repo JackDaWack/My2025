@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 data::data(){feature_vector = new std::vector<uint8_t>;}
-data::~data(){free(feature_vector);} 
+data::~data(){delete feature_vector;} 
 
 //Setter and appender methods.
  void data::set_feature_vector(std::vector<uint8_t> *vect){feature_vector = vect;}

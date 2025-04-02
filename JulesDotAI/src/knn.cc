@@ -11,7 +11,7 @@ knn::knn(int val)
 }
 knn::~knn()
 {
-    //free stuff
+    //free stuff later
 }
 
 //Calculates and stores the distance between data points. 

@@ -10,10 +10,10 @@ data_handler::data_handler()
 }
 data_handler::~data_handler()
 {
-    free(data_array);
-    free(test_data);
-    free(training_data);
-    free(validation_data);
+    delete data_array;
+    delete test_data;
+    delete training_data;
+    delete validation_data;
 }
 
 void data_handler::read_feature_vector(std::string path)
@@ -104,7 +104,7 @@ void data_handler::split_data()
         }
     }
     //test data:
-    int count = 0;
+    count = 0;
     while (count<test_size)
     {
         int random_index = rand() % data_array->size();
@@ -116,7 +116,7 @@ void data_handler::split_data()
         }
     }
     //validation data:
-    int count = 0;
+    count = 0;
     while (count<validation_size)
     {
         int random_index = rand() % data_array->size();

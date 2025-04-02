@@ -1,5 +1,8 @@
-Original code design by Gerald Taylor
-Modified by Jackson Netter
+Original code design by Gerald Taylor.
+Implemented and modified by Jackson Netter.
+
+4/2/2025:
+-Corrected memory deallocation in class destructors for data and data_handler classes.
 
 3/30/2025:
 -Implemented validate_performance() and test_performance methods.
