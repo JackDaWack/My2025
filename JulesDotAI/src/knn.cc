@@ -138,7 +138,4 @@ double knn::validate_performance()
     return current_performance;
 }
 //setters:
-void knn::set_training(std::vector<data *> * vect){training_data = vect;}
-void knn::set_test(std::vector<data *> * vect){test_data = vect;}
-void knn::set_validation(std::vector<data *> * vect){validation_data = vect;}
 void knn::set_k(int val){k = val;}

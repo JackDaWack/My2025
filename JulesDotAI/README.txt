@@ -1,6 +1,14 @@
 Original code design by Gerald Taylor.
 Implemented and modified by Jackson Netter.
 
+4/12/2025
+-Implemented common_data.cc.
+-Added common_data to knn.cc libraries.
+-Removed setter functions that were in the common_data class from knn files.
+-Removed unneeded libraries from knn files.
+-Made knn into a subclass of common_data.
+-Began modifiying data_handler class for text input.
+
 4/2/2025:
 -Corrected memory deallocation in class destructors for data and data_handler classes.
 -Created common_data files.

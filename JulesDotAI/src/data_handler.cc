@@ -1,4 +1,5 @@
 #include "data_handler.hpp"
+#include <iostream>
 
 //Constructor and destructor
 data_handler::data_handler()
@@ -18,41 +19,38 @@ data_handler::~data_handler()
 
 void data_handler::read_feature_vector(std::string path)
 {
-    uint32_t header[4];//Magic, num of images, rowsize, colsize
-    unsigned char bytes[4];
-    FILE *f = fopen(path.c_str(),"r");
-    if (f)
+    std::ifstream infile(path);
+    if (!infile.is_open())
     {
-        for(int i = 0; i < 4; i++)
-        {if (fread(bytes, sizeof(bytes), 1, f)){header[i] = convert_to_little_endian(bytes);}}
-        printf("Done getting input file header.\n");
-        int image_size = header[2]*header[3];
-        //iterates through images
-        for(int i = 0; i < header[1]; i++)
-        {
-            data *dat = new data();
-            uint8_t element[1];
-            //scans each image
-            for(int j = 0; j < image_size; j++)
-            {
-                if(fread(element, sizeof(element), 1, f))
-                {
-                    dat->append_feature_vector(element[0]);
-                } else
-                {
-                    printf("File reading error.\n");
-                    exit(1);
-                }
-            }
-            data_array->push_back(dat);
-        }
-        printf("Data extraction success.\n %lu feature vectors read and stored.\n", data_array->size());
-        fclose(f);
-    } else
-    {
-        printf("File not found.\n");
+        std::cerr << "File not found.\n";
         exit(1);
     }
+
+    std::string line;
+    while (std::getline(infile, line))
+    {
+        std::stringstream ss(line);
+        std::string value;
+        data* dat = new data();
+
+        // Parse each value in the line
+        while (std::getline(ss, value, ','))
+        {
+            try {
+                float feature = std::stof(value);
+                dat->append_feature_vector(feature);
+            } catch (const std::invalid_argument&) {
+                std::cerr << "Invalid value encountered: " << value << "\n";
+                delete dat;
+                exit(1);
+            }
+        }
+
+        data_array->push_back(dat);
+    }
+
+    std::cout << "Data extraction success.\n"
+    << data_array->size() << " feature vectors read and stored.\n";
 }
 void data_handler::read_feature_labels(std::string path)
 {

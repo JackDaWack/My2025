@@ -1,10 +1,9 @@
 #ifndef __KNN_H
 #define __KNN_H
 
-#include <vector>
-#include "data.hpp"
+#include "common_data.hpp"
 
-class knn
+class knn : public common_data
 {
     int k;
     std::vector<data *> * training_data;
@@ -22,9 +21,6 @@ class knn
     double test_performance();
     double validate_performance();
     //setters:
-    void set_training(std::vector<data *> * vect);
-    void set_test(std::vector<data *> * vect);
-    void set_validation(std::vector<data *> * vect);
     void set_k(int val);
 };
 
