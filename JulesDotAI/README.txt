@@ -9,6 +9,8 @@ Implemented and modified by Jackson Netter.
 -Made knn into a subclass of common_data.
 -Began modifiying data_handler class for text input.
 -Included sstream library in data_handler class.
+-Added JulesWorks.txt file to store data that will be used for training the model.
+-Pasted "Around the World in 80 Days" by Jules Verne into JulesWorks file from the Gutenberg Project.
 
 4/2/2025:
 -Corrected memory deallocation in class destructors for data and data_handler classes.
