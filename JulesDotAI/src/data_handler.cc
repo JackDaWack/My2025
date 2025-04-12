@@ -1,5 +1,6 @@
 #include "data_handler.hpp"
 #include <iostream>
+#include <sstream>
 
 //Constructor and destructor
 data_handler::data_handler()

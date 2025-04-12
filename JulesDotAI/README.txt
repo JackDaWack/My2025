@@ -8,6 +8,7 @@ Implemented and modified by Jackson Netter.
 -Removed unneeded libraries from knn files.
 -Made knn into a subclass of common_data.
 -Began modifiying data_handler class for text input.
+-Included sstream library in data_handler class.
 
 4/2/2025:
 -Corrected memory deallocation in class destructors for data and data_handler classes.
