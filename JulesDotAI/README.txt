@@ -1,6 +1,8 @@
 Original code design by Gerald Taylor.
 Implemented and modified by Jackson Netter.
 
+Progress Log:
+
 4/12/2025
 -Implemented common_data.cc.
 -Added common_data to knn.cc libraries.
@@ -11,6 +13,8 @@ Implemented and modified by Jackson Netter.
 -Included sstream library in data_handler class.
 -Added JulesWorks.txt file to store data that will be used for training the model.
 -Pasted "Around the World in 80 Days" by Jules Verne into JulesWorks file from the Gutenberg Project.
+-Began kmeans implementation in kmeans.hpp.
+-Updated README format.
 
 4/2/2025:
 -Corrected memory deallocation in class destructors for data and data_handler classes.
